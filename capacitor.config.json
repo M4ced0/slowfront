@@ -1,0 +1,8 @@
+{
+  "appId": "slow.vue",
+  "appName": "slow-vue",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  }
+}
