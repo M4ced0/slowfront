@@ -6,6 +6,8 @@ import HomeView from '../views/HomeView.vue'
 import LoginView from '@/views/LoginView.vue'
 import AddressesView from '@/views/AddressesView.vue'
 import CategoryView from '@/views/CategoryView.vue'
+import ShoppingBagView from '@/views/ShoppingBagView.vue'
+import OrderView from '@/views/OrderView.vue'
 
 Vue.use(VueRouter)
 
@@ -32,6 +34,18 @@ const routes = [
     path: '/category',
     name: 'category',
     component: CategoryView,
+    beforeEnter: authMiddleware.auth,
+  },
+  {
+    path: '/shopping-bag',
+    name: 'shoppingBag',
+    component: ShoppingBagView,
+    beforeEnter: authMiddleware.auth,
+  },
+  {
+    path: '/order',
+    name: 'order',
+    component: OrderView,
     beforeEnter: authMiddleware.auth,
   }
 ]
