@@ -517,11 +517,16 @@
     flex-direction: column;
     border: 1px solid var(--color-grey);
     border-radius: 1vh;
+    margin-bottom: 5vh;
+}
+
+.orderDetailsHeader {
+    margin: 3vw 4vw;
 }
 
 .orderDetailsHeader img {
-    padding: 1vh;
-    width: 8vw;
+    margin-right: 1vh;
+    width: 5vw;
 }
 
 .OverviewOrder {
@@ -542,4 +547,201 @@
     margin: 0;
 }
 
-.titleHeader {}
+.titleOrderDetails {
+    color: var(--color-grey);
+}
+
+.right {
+    align-items: flex-end;
+}
+
+.itemOverview {
+    margin: 0.8vh 0;
+}
+
+.wrapper {
+    margin: 0.7vh;
+}
+
+.OverviewCosts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--color-grey);
+    font-size: 75%;
+}
+
+.dashedBorder {
+    border-style: dashed;
+    border-bottom-width: 1px;
+}
+
+.solidBorderOrderStatus {
+    border-style: solid;
+    border-bottom-width: 1px;
+    border-color: var(--text-color-3);
+    margin: 0;
+}
+
+.overviewItemDescription {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.marginTB2 {
+    margin: 2vh 0;
+}
+
+.blueText {
+    color: #3e77bd;
+}
+
+.listItemProductStatus {
+    background-color: var(--bg-color-2);
+}
+
+.itemProductStatus {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1.5vh 5vw;
+}
+
+.itemProductStatusImg {
+    width: 16vw;
+    height: 10vh;
+}
+
+.itemProductStatusImg img {
+    width: 100%;
+}
+
+.itemDescriptionTotalProductStatus {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.padding5vw {
+    padding: 1.5vh 5vw;
+}
+
+.wrapper5h {
+    margin: 5vh
+}
+
+.profilePicture {
+    width: 24vw;
+    height: 13vh;
+}
+
+.mainInfoUser {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 6vw 0;
+}
+
+.scoreUser {
+    background-color: var(--text-color-1);
+    border-radius: 2vh;
+    height: 12vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 0px 18vw;
+}
+
+.opProfile {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border-color-1);
+    border-radius: 1.5vh;
+    padding: 2vh;
+}
+
+.wrapper2vh {
+    margin: 2vh;
+}
+
+.headerOrderStatus {
+    background-color: var(--color-primary);
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.headerTopOrderStatus {
+    background-color: var(--bg-color-2);
+    height: 6.5vh;
+    width: 100%;
+    display: flex;
+    border-top-right-radius: 4vh;
+    border-top-left-radius: 4vh;
+    align-items: center;
+    box-shadow: 0px 0px 8px 0px rgb(0 0 0 / 16%);
+}
+
+.msgOrderStatus {
+    background-color: var(--color-white);
+    width: 100%;
+    height: 82%;
+    display: flex;
+    box-shadow: 0px 0px 8px 0px rgb(0 0 0 / 16%);
+    border-bottom-right-radius: 4vh;
+    border-bottom-left-radius: 4vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerMsgOrderStatus {
+    width: 100%;
+    height: 17vh;
+}
+
+.mg-5 {
+    margin: 5vh;
+}
+
+.abasSales {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.abaTitleSales {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+  
+.iconAbaTitleSales {
+    width: 10%;
+    margin-right: 2%;
+}
+
+.iconAbaTitleSales img {
+    width: 100%;
+    height: auto;
+}
+
+.borderAba{
+    border-bottom: 3px solid var(--color-primary);
+    height: 7vh;
+    background-image: linear-gradient(to top, var(--bg-color-1), white)
+}

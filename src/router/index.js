@@ -8,7 +8,8 @@ import AddressesView from '@/views/AddressesView.vue'
 import CategoryView from '@/views/CategoryView.vue'
 import ShoppingBagView from '@/views/ShoppingBagView.vue'
 import OrderView from '@/views/OrderView.vue'
-
+import ProfileView from '@/views/ProfileView.vue'
+import SalesView from '@/views/SalesView.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -40,14 +41,28 @@ const routes = [
     path: '/shopping-bag',
     name: 'shoppingBag',
     component: ShoppingBagView,
-    beforeEnter: authMiddleware.auth,
+    /* beforeEnter: authMiddleware.auth, */
   },
   {
     path: '/order',
     name: 'order',
     component: OrderView,
-    beforeEnter: authMiddleware.auth,
+    /* beforeEnter: authMiddleware.auth, */
+    
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    component: ProfileView,
+    /* beforeEnter: authMiddleware.auth, */
+  },
+  {
+    path: '/sales',
+    name: 'sales',
+    component: SalesView,
+    
   }
+
 ]
 
 const router = new VueRouter({

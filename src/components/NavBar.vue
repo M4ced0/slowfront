@@ -4,10 +4,10 @@
             <li class="item-menu actived" @click="home">
                 <img src="@/assets/images/menu/menu_1.png" alt="Home" width="50">
             </li>
-            <li class="item-menu">
+            <li class="item-menu" @click="sales">
                 <img src="@/assets/images/menu/menu_2.png" alt="Sales" width="40">
             </li>
-            <li class="item-menu">
+            <li class="item-menu" @click="profile">
                 <img src="@/assets/images/menu/menu_3.png" alt="Users" width="30">
             </li>
             <li class="item-menu" @click="shoppingBag">
@@ -21,6 +21,12 @@
 export default {
     name: 'NavBar',
     methods: {
+        sales() {
+            this.$router.push('/sales')
+        },
+        profile() {
+            this.$router.push('/profile')
+        },
         shoppingBag() {
             this.$router.push('/shopping-bag')
         },
