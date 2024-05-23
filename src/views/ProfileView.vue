@@ -53,7 +53,7 @@
             </div>
             <div class="titleOpProfile text-18-600 ">Sair</div>
         </div>
-        <div class="wrapper"></div>
+        <div class="wrapper100"></div>
         <NavBar />
     </div>
 </template>

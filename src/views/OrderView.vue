@@ -5,8 +5,17 @@
                 <div class="headerTopOrderStatus"><i class="margin5 material-icons text-color-primary cursor-pointer"
                         @click="back">chevron_left</i></div>
                 <div class="msgOrderStatus">
-                    <div class="text-color-3 text-13-600">15:31 | 19/02/2024</div>
+                    <div class="text-color-3 text-11-600">15:31 | 19/02/2024</div>
                     <div class="text-color-primary text-20-600">Recebemos seu pedido</div>
+                    <div class="circle-line w-60 d-flex flex-row justify-content-between align-items-center">
+                        <div class="circle"></div>
+                        <div class="line"></div>
+                        <div class="circle"></div>
+                        <div class="line"></div>
+                        <div class="circle"></div>
+                        <div class="line"></div>
+                        <div class="circle"></div>
+                    </div>
                 </div>
             </div>
         </header>
@@ -35,8 +44,9 @@
                 </div>
                 <div class="wrapper"></div>
                 <div class="text-13 text-color-3">
-                    <div class="text-13 text-color-3">
+                    <div class="text-13 text-color-3 d-flex flex-row align-items-center">
                         Status do pagamento:
+                        <div class="statusPagamento text-10"><b>não pago</b></div>
                     </div>
                 </div>
                 <div class="wrapper"></div>
