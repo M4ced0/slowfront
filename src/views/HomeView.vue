@@ -4,7 +4,7 @@
             <div class="infos">
                 <img class="logo" src="@/assets/images/logo-2.png" alt="">
                 <div class="address">
-                    <label class="text-20-600 text-color-1">14/02/2024 | 01:00</label>
+                    <label class="text-20-600 text-color-1">{{ currentDate }}</label>
                     <label class="addess-actived text-13-600 text-color-1 cursor-pointer" @click="addresses">
                         <span>Rua São Bartolomeu, 97</span>
                         <i class="material-icons text-color-primary">expand_more</i>
@@ -13,7 +13,8 @@
             </div>
             <div class="search">
                 <div class="group-input">
-                    <input type="text" class="item-input" placeholder="Procurar produtos">
+                    <input type="text" class="item-input" placeholder="Procurar produtos" v-model="searchQuery"
+                        @input="search">
                     <button class="btn btn-black btn-small">
                         <i class="material-icons">search</i>
                     </button>
@@ -23,18 +24,11 @@
         <main class="content">
             <section class="categories">
                 <div class="slide-categories">
-                    <swiper 
-                    :slidesPerView="4" 
-                    :grid="{
+                    <swiper :slidesPerView="4" :grid="{
                         rows: 2,
-                    }" 
-                    :spaceBetween="10" 
-                    :pagination="{
+                    }" :spaceBetween="10" :pagination="{
                         clickable: true,
-                    }" 
-                    :modules="modules" 
-                    class="mySwiper"
-                    >
+                    }" :modules="modules" class="mySwiper">
                         <swiper-slide>
                             <div class="category" @click="category">
                                 <div class="item-category">
@@ -286,17 +280,49 @@ import { Grid, Pagination } from 'swiper/modules';
 
 export default {
     name: 'HomeView',
+    data() {
+        return {
+            currentDate: this.getCurrentDate(),
+            searchQuery: '',
+            products: [],
+            categories: [],
+            filteredProducts: [],
+            filteredCategories: []
+        }
+    },
     components: {
         NavBar,
         Swiper,
         SwiperSlide
     },
     methods: {
+        async search() {
+            try {
+                const productsResponse = await fetch(`http://127.0.0.1:8000/api/products`);
+                const categoriesResponse = await fetch(`http://127.0.0.1:8000/api/categories`);
+                this.products = await productsResponse.json();
+                this.categories = await categoriesResponse.json();
+
+                this.filteredProducts = this.products.filter(product => product.name.toLowerCase().includes(this.searchQuery.toLowerCase()));
+                this.filteredCategories = this.categories.filter(category => category.name.toLowerCase().includes(this.searchQuery.toLowerCase()));
+            } catch (error) {
+                console.error(error);
+            }
+        },
         addresses() {
             this.$router.push('/addresses')
         },
         category() {
             this.$router.push('/category')
+        },
+        getCurrentDate() {
+            const date = new Date();
+            const day = date.getDate().toString().padStart(2, '0');
+            const month = (date.getMonth() + 1).toString().padStart(2, '0');
+            const year = date.getFullYear();
+            const hours = date.getHours().toString().padStart(2, '0');
+            const minutes = date.getMinutes().toString().padStart(2, '0');
+            return `${day}/${month}/${year} | ${hours}:${minutes}`;
         }
     },
     setup() {
@@ -304,5 +330,10 @@ export default {
             modules: [Grid, Pagination],
         };
     },
+    mounted() {
+        setInterval(() => {
+            this.currentDate = this.getCurrentDate();
+        }, 60000);
+    }
 }
 </script>

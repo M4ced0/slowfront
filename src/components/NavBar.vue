@@ -1,13 +1,13 @@
 <template>
     <nav class="navbar box-item">
         <ul class="menu">
-            <li class="item-menu actived" @click="home">
+            <li @click="home" :class="isHomeActive ? 'item-menu actived' : 'item-menu'">
                 <img src="@/assets/images/menu/menu_1.png" alt="Home" width="50">
             </li>
-            <li class="item-menu" @click="sales">
+            <li @click="sales"  :class="isSalesActive ? 'item-menu actived' : 'item-menu'" >
                 <img src="@/assets/images/menu/menu_2.png" alt="Sales" width="40">
             </li>
-            <li class="item-menu" @click="profile">
+            <li :class="isProfileActive ? 'item-menu actived' : 'item-menu'" @click="profile(); selectTab('profile');">
                 <img src="@/assets/images/menu/menu_3.png" alt="Users" width="30">
             </li>
             <li class="item-menu" @click="shoppingBag">
@@ -20,18 +20,38 @@
 <script>
 export default {
     name: 'NavBar',
+    data() {
+        return {
+            isHomeActive: false,
+            isSalesActive: false,
+            isProfileActive: false,
+        };
+    },
+    created() {
+        this.selectTab(this.$route.path);
+    },
     methods: {
+        selectTab(path) {
+            this.isHomeActive = path === '/home';
+            this.isSalesActive = path === '/sales';
+            this.isProfileActive = path === '/profile';
+        },
         sales() {
-            this.$router.push('/sales')
+            this.$router.push('/sales');
         },
         profile() {
-            this.$router.push('/profile')
+            this.$router.push('/profile');
         },
         shoppingBag() {
-            this.$router.push('/shopping-bag')
+            this.$router.push('/shopping-bag');
         },
         home() {
-            this.$router.push('/home')
+            this.$router.push('/home');
+        }
+    },
+    watch: {
+        '$route.path': function(path) {
+            this.selectTab(path);
         }
     }
 }
