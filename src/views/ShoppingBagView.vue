@@ -17,7 +17,7 @@
                     <div class="item-title">
                         <div class="item-title-name">
                             <p class="text-14-600 text-color-2">Elf Bar TE5000</p>
-                            <p>preço unitário</p>
+                            <p class="text-10">preço unitário</p>
                         </div>
 
                     </div>
@@ -54,7 +54,7 @@
                     <div class="item-title">
                         <div class="item-title-name">
                             <p class="text-14-600 text-color-2">Elf Bar TE5000</p>
-                            <p>preço unitário</p>
+                            <p class="text-10">preço unitário</p>
                         </div>
 
                     </div>
@@ -129,7 +129,11 @@
         </div>
         <div id="paymentMethod" class="bg-order margin5">
             <div id="paymentMethodHeader" class="orderSumary">
+                <div class="wrapper"></div>
+                <div class="wrapper"></div>
+                <div class="wrapper"></div>
                 <img class="icon5vh" src="@/assets/images/extra/carteira.png" alt="">
+                <div class="wrapper"></div>
                 <div id="paymentMethodTitle">
                     <p>Forma de pagamento</p>
                     <p class="sub-title">O pagamento é combinado posteriormente</p>
