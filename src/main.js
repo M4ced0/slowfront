@@ -1,44 +1,36 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
-import axios from 'axios'
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
+import store from './store';
 
-import { BootstrapVue } from 'bootstrap-vue'
-Vue.use(BootstrapVue)
+import axios from 'axios';
 
-import VueClipboard from 'vue-clipboard2';
-Vue.use(VueClipboard);
-
-import {DataTable} from "simple-datatables"
-import 'simple-datatables/src/css/style.css';
-
-Vue.prototype.$DataTable = DataTable;
-
-
-import 'vue-phone-number-input/dist/vue-phone-number-input.css';
-
-// Vue.component('vue-phone-number-input', VuePhoneNumberInput);
+import VueMask from '@devindex/vue-mask';
 
 import VueSweetalert2 from 'vue-sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
 
+// Configurando opções do VueSweetalert2
 const options = {
   confirmButtonColor: '#41b882',
   cancelButtonColor: '#ff7674',
 };
 
-Vue.use(VueSweetalert2, options);
+// Configurando URL base do Axios
+axios.defaults.baseURL = 'http://localhost:8000/api';
 
-/* URL API */
-axios.defaults.baseURL = 'http://localhost:8000/api'
+// Criando a aplicação Vue
+const app = createApp(App);
 
-Vue.prototype.$http = axios
+// Adicionando Axios ao prototype do Vue
+app.config.globalProperties.$http = axios;
+app.config.globalProperties.storage = 'http://localhost:8000/storage';
 
-Vue.config.productionTip = false
-
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount('#app')
+// Configurações e plugins
+app.use(store);
+app.use(router);
+// app.use(BootstrapVue3);
+app.use(VueSweetalert2, options);
+app.use(VueMask);
+// Montando a aplicação
+app.mount('#app');

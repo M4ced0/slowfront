@@ -124,7 +124,7 @@
             </div>
             <div id="couponCode" class="option text-color-2 margin5 text-11-600 ">
                 <p>Código de cupom de desconto: </p>
-                <input type="text" class="" placeholder="(Opcional)">
+                <button id='button-coupon' class="btn btn-primary btn-small" @click="showCupons">Exibir Todos</button>
             </div>
         </div>
         <div id="paymentMethod" class="bg-order margin5">
@@ -165,7 +165,7 @@
                 <p class="customerInfoTitle text-14-600">Observações</p>
             </div>
         </div>
-        
+
         <div class="customerObservation margin5">
             <textarea class="textObs w-100" placeholder="(Optional)"></textarea>
         </div>
@@ -176,7 +176,52 @@
             <p>Venda proibida para menores de 18 anos.<br> Apresente documento com foto na entrega para comprovar a sua
                 idade (+18).</p>
         </div>
-
+        <div v-show="isCoupon" class="backgroundTransparent"></div>
+        <div v-show="isCoupon" id="couponModal" class="home_box_form border-radius-top">
+            
+            <div class="text-16-600 text-color-3 d-flex flex-row justify-content-between align-items-center">
+                CUPONS DISPONÍVEIS
+                <img @click="hideCupons" src="../assets/images/extra/fechar.png">
+            </div>
+            <div class="couponList">
+                <div class="couponContainer box-item gap-1 cursor-pointer">
+                    <div class="w-100 d-flex flex-row justify-content-start align-items-center gap-1">
+                        <div class="discountCoupon w-20 d-flex justify-content-center text-14-600">10%</div>
+                        <div class="nameCoupon text-16-600">POD 10</div>
+                    </div>
+                    <div class="descriptionCoupon text-12 text-color-3">
+                        Desconto: 10%, Acima de R$40,00. Válido apenas para compras de Pods. Até 05/06/2024.
+                    </div>
+                </div>
+                <div class="couponContainer box-item gap-1 cursor-pointer">
+                    <div class="w-100 d-flex flex-row justify-content-start align-items-center gap-1">
+                        <div class="discountCoupon w-20 d-flex justify-content-center text-14-600">FRETE</div>
+                        <div class="nameCoupon text-16-600">TAXAZERO</div>
+                    </div>
+                    <div class="descriptionCoupon text-12 text-color-3">
+                        Desconto: 10%, Acima de R$40,00. Válido apenas para compras de Pods. Até 05/06/2024.
+                    </div>
+                </div>
+                <div class="couponContainer box-item gap-1 cursor-pointer">
+                    <div class="w-100 d-flex flex-row justify-content-start align-items-center gap-1">
+                        <div class="discountCoupon w-20 d-flex justify-content-center text-14-600">15%</div>
+                        <div class="nameCoupon text-16-600">NOROLE</div>
+                    </div>
+                    <div class="descriptionCoupon text-12 text-color-3">
+                        Desconto: 10%, Acima de R$40,00. Válido apenas para compras de Pods. Até 05/06/2024.
+                    </div>
+                </div>
+                <div class="couponContainer box-item gap-1 cursor-pointer">
+                    <div class="w-100 d-flex flex-row justify-content-start align-items-center gap-1">
+                        <div class="discountCoupon w-20 d-flex justify-content-center text-14-600">10%</div>
+                        <div class="nameCoupon text-16-600">POD10</div>
+                    </div>
+                    <div class="descriptionCoupon text-12 text-color-3">
+                        Desconto: 10%, Acima de R$40,00. Válido apenas para compras de Pods. Até 05/06/2024.
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 <script>
@@ -185,7 +230,11 @@
 export default {
     name: 'ShoppingBagView',
     components: {
-
+    },
+    data() {
+        return {
+            isCoupon: false
+        }
     },
     methods: {
         order() {
@@ -193,6 +242,12 @@ export default {
         },
         back() {
             this.$router.push('/home')
+        },
+        showCupons() {
+            this.isCoupon = true
+        },
+        hideCupons() {
+            this.isCoupon = false
         }
     }
 }

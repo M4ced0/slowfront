@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<resources>
-    <string name="app_name">Slow</string>
-    <string name="title_activity_main">Slow</string>
-    <string name="package_name">slow.vue</string>
-    <string name="custom_url_scheme">slow.vue</string>
-</resources>

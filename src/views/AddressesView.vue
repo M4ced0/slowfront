@@ -2,12 +2,12 @@
     <div class="base">
         <header class="header page-all">
             <i class="material-icons text-color-primary cursor-pointer" @click="back">chevron_left</i>
-            <div class="title text-color-3 text-22-600">Escolha um Endereço</div>
+            <div class="title text-color-3 text-22-600">Endereços</div>
         </header>
         <main class="content">
             <section class="search">
                 <div class="title-offers p-title text-color-2 p-0 m-0 text-18-600">
-                    Pesquisar
+                    Adicionar novo endereço
                 </div>
                 <div class="group-input">
                     <input type="text" class="item-input" placeholder="Buscar endereço pelo CEP" v-model="cep">

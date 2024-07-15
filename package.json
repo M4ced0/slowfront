@@ -1,35 +1,27 @@
 {
-  "name": "slow-vue",
+  "name": "app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "ionic:build": "npm run build",
-    "ionic:serve": "npm run serve"
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@capacitor/android": "5.7.2",
-    "@capacitor/app": "5.0.7",
-    "@capacitor/cli": "5.7.2",
-    "@capacitor/core": "5.7.2",
-    "@capacitor/haptics": "5.0.7",
-    "@capacitor/keyboard": "5.0.8",
-    "@capacitor/status-bar": "5.0.7",
-    "axios": "^1.6.8",
+    "@devindex/vue-mask": "^2.0.3",
+    "axios": "^1.7.2",
     "bootstrap": "^5.3.3",
     "bootstrap-vue": "^2.23.1",
+    "bootstrap-vue-3": "^0.5.1",
     "core-js": "^3.8.3",
     "js-cookie": "^3.0.5",
-    "simple-datatables": "^9.0.0",
-    "swiper": "^11.1.3",
-    "vue": "^2.7.16",
-    "vue-clipboard2": "^0.3.3",
-    "vue-phone-number-input": "^1.12.13",
-    "vue-router": "^3.5.1",
-    "vue-sweetalert2": "^5.0.5",
-    "vuex": "^3.6.2"
+    "maska": "^3.0.0-beta4",
+    "swiper": "^10.0.0",
+    "v-mask": "^2.3.0",
+    "vue": "^3.2.13",
+    "vue-router": "^4.0.3",
+    "vue-sweetalert2": "^5.0.11",
+    "vuex": "^4.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
@@ -40,8 +32,7 @@
     "@vue/cli-plugin-vuex": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3",
-    "vue-template-compiler": "^2.6.14"
+    "eslint-plugin-vue": "^8.0.3"
   },
   "eslintConfig": {
     "root": true,
@@ -49,7 +40,7 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/essential",
+      "plugin:vue/vue3-essential",
       "eslint:recommended"
     ],
     "parserOptions": {
@@ -60,6 +51,7 @@
   "browserslist": [
     "> 1%",
     "last 2 versions",
-    "not dead"
+    "not dead",
+    "not ie 11"
   ]
 }

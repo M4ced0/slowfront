@@ -10,55 +10,61 @@
                     Marcas
                 </div>
                 <div class="slide-categories">
-                    <div class="category">
-                        <div class="item-category favorite">
-                            <img src="@/assets/images/ofertas.webp" alt="">
-                        </div>
-                    </div>
+                    <swiper :slidesPerView="4" :spaceBetween="5" class="mySwiper">
+                        <swiper-slide>
+                            <div class="category">
+                                <div class="item-category favorite">
+                                    <img src="@/assets/images/marcas/marca1.png" alt="">
+                                </div>
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide>
+                            <div class="category">
+                                <div class="item-category favorite">
+                                    <img src="@/assets/images/marcas/marca2.png" alt="">
+                                </div>
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide>
+                            <div class="category">
+                                <div class="item-category favorite">
+                                    <img src="@/assets/images/marcas/marca3.png" alt="">
+                                </div>
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide>
+                            <div class="category">
+                                <div class="item-category favorite">
+                                    <img src="@/assets/images/marcas/marca4.png" alt="">
+                                </div>
+                            </div>
+                        </swiper-slide>
+                        <swiper-slide>
+                            <div class="category">
+                                <div class="item-category favorite">
+                                    <img src="@/assets/images/marcas/marca3.png" alt="">
+                                </div>
+                            </div>
+                        </swiper-slide>
+                    </swiper>
                 </div>
             </section>
             <section class="produts">
                 <div class="title-produts p-title text-color-2 text-18-600">Elf Bar TE5000</div>
                 <div class="slide-produts">
-                    <div class="item-product category box-item">
+                    <div class="item-product box-item">
                         <div class="img-offer">
-                            <img src="@/assets/images/img_home.png" alt="">
+                            <img src="@/assets/images/itens/elf_bar_te.png" alt="">
                         </div>
                         <div class="infos">
-                            <div class="price text-color-1 text-16-600 m-0">R$ 6,00</div>
-                            <div class="item-name text-color-3 pt-0 p-title m-0 text-color-2">
-                                <span class="name text-13-600 pb-0 ">Elf Bar TE | Strawberry</span>
-                                <span class="text-10">1 Unid c/ 32 folhas</span>
+                            <div class="price text-color-primary text-16-600">R$ 95,00</div>
+                            <div class="promo">
+                                <span class="tag tag-primary text-12">Até - 15%</span>
+                                <span class="text-12 text-color-3">R$ 120,00</span>
                             </div>
-                            <div class="add w-100">
-                                <button class="btn btn-all btn-primary">Adicionar</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-product category box-item">
-                        <div class="img-offer">
-                            <img src="@/assets/images/img_home.png" alt="">
-                        </div>
-                        <div class="infos">
-                            <div class="price text-color-1 text-16-600 m-0">R$ 6,00</div>
-                            <div class="item-name text-color-3 pt-0 p-title m-0 text-color-2">
-                                <span class="name text-13-600 pb-0 ">Elf Bar TE | Strawberry</span>
-                                <span class="text-10">1 Unid c/ 32 folhas</span>
-                            </div>
-                            <div class="add w-100">
-                                <button class="btn btn-all btn-primary">Adicionar</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-product category box-item">
-                        <div class="img-offer">
-                            <img src="@/assets/images/img_home.png" alt="">
-                        </div>
-                        <div class="infos">
-                            <div class="price text-color-1 text-16-600 m-0">R$ 6,00</div>
-                            <div class="item-name text-color-3 pt-0 p-title m-0 text-color-2">
-                                <span class="name text-13-600 pb-0 ">Elf Bar TE | Strawberry</span>
-                                <span class="text-10">1 Unid c/ 32 folhas</span>
+                            <div class="item-name text-color-3 p-title">
+                                <span class="name text-13-600 ">Elf Bar TE | Strawberry</span>
+                                <span class="text-10">500 Puffs</span>
                             </div>
                             <div class="add w-100">
                                 <button class="btn btn-all btn-primary">Adicionar</button>
@@ -70,45 +76,19 @@
             <section class="produts">
                 <div class="title-produts p-title text-color-2 text-18-600">Elf Bar BC4000</div>
                 <div class="slide-produts">
-                    <div class="item-product category box-item">
+                    <div class="item-product box-item">
                         <div class="img-offer">
-                            <img src="@/assets/images/img_home.png" alt="">
+                            <img src="@/assets/images/itens/elf_bar_te.png" alt="">
                         </div>
                         <div class="infos">
-                            <div class="price text-color-1 text-16-600 m-0">R$ 6,00</div>
-                            <div class="item-name text-color-3 pt-0 p-title m-0 text-color-2">
-                                <span class="name text-13-600 pb-0 ">Elf Bar TE | Strawberry</span>
-                                <span class="text-10">1 Unid c/ 32 folhas</span>
+                            <div class="price text-color-primary text-16-600">R$ 95,00</div>
+                            <div class="promo">
+                                <span class="tag tag-primary text-12">Até -15%</span>
+                                <span class="text-12 text-color-3">R$ 120,00</span>
                             </div>
-                            <div class="add w-100">
-                                <button class="btn btn-all btn-primary">Adicionar</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-product category box-item">
-                        <div class="img-offer">
-                            <img src="@/assets/images/img_home.png" alt="">
-                        </div>
-                        <div class="infos">
-                            <div class="price text-color-1 text-16-600 m-0">R$ 6,00</div>
-                            <div class="item-name text-color-3 pt-0 p-title m-0 text-color-2">
-                                <span class="name text-13-600 pb-0 ">Elf Bar TE | Strawberry</span>
-                                <span class="text-10">1 Unid c/ 32 folhas</span>
-                            </div>
-                            <div class="add w-100">
-                                <button class="btn btn-all btn-primary">Adicionar</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-product category box-item">
-                        <div class="img-offer">
-                            <img src="@/assets/images/img_home.png" alt="">
-                        </div>
-                        <div class="infos">
-                            <div class="price text-color-1 text-16-600 m-0">R$ 6,00</div>
-                            <div class="item-name text-color-3 pt-0 p-title m-0 text-color-2">
-                                <span class="name text-13-600 pb-0 ">Elf Bar TE | Strawberry</span>
-                                <span class="text-10">1 Unid c/ 32 folhas</span>
+                            <div class="item-name text-color-3 p-title">
+                                <span class="name text-13-600 ">Elf Bar TE | Strawberry</span>
+                                <span class="text-10">500 Puffs</span>
                             </div>
                             <div class="add w-100">
                                 <button class="btn btn-all btn-primary">Adicionar</button>
@@ -119,31 +99,30 @@
             </section>
         </main>
 
-        <nav class="navbar box-item">
-            <ul class="menu">
-                <!-- <li class="item-menu">
-                    <span class="material-icons">chair</span>
-                </li>
-                <li class="item-menu">
-                    <span class="material-icons">description</span>
-                </li>
-                <li class="item-menu">
-                    <span class="material-icons">person</span>
-                </li>
-                <li class="item-menu">
-                    <span class="material-icons">local_grocery_store</span>
-                </li> -->
-            </ul>
-        </nav>
+        <NavBar/>
     </div>
 </template>
 
 <script>
+import NavBar from '@/components/NavBar.vue'
+
+import { Swiper, SwiperSlide } from 'swiper/vue';
+
+import 'swiper/css';
+
+import 'swiper/css/grid';
+import 'swiper/css/pagination';
+
 export default {
     methods: {
         back(){
             this.$router.push('/home')
         }
-  }
+  },
+    components: {
+        NavBar,
+        Swiper,
+        SwiperSlide
+    },
 }
 </script>

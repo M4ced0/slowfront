@@ -1,7 +1,0 @@
-{
-  "name": "slow-vue",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "custom"
-}

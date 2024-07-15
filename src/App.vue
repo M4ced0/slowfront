@@ -34,6 +34,12 @@ export default{
             icon: type
         });
     },
+    amountConverted(value){
+      return value.toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL'
+      });
+    }
   }
 }
 

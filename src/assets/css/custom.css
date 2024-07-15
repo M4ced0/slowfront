@@ -66,7 +66,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    min-height: 8dvh;
+    height: 70px;
     margin-bottom: 10px;
     background-color: var(--color-white);
 }
@@ -105,8 +105,8 @@
 
 .base .navbar .menu .item-menu {
     width: 25%;
-    /* display: flex;
-    justify-content: center; */
+    display: flex;
+    justify-content: center;
     cursor: pointer;
 }
 
@@ -122,7 +122,7 @@
 
 .base .content,
 .base .header.home {
-    padding: 0 2dvh;
+    padding: 0 10px;
 }
 
 .base .header.home .infos {
@@ -155,7 +155,7 @@
 }
 
 .base .content .categories .category {
-    width: calc(25% - 10px);
+    width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -163,7 +163,7 @@
 }
 
 .base .content .categories .category .item-category {
-    width: 50%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -196,13 +196,26 @@
 }
 
 .base .content .highlights .slide-highlights {
+    position: relative;
     display: flex;
     gap: 10px;
+    width: 100%;
+    height: 100px;
 }
 
+.base .content .highlights .slide-highlights .swiper{
+    position: absolute;
+    left: -67px;
+    width: 112%;
+}
+
+.base .content .highlights .slide-highlights .swiper-slide{
+    width: 70%!important;
+}
+
+
 .base .content .highlights .slide-highlights .item-highlights {
-    min-width: 70%;
-    max-width: 70%;
+    width: 100%;
     height: 100px;
     border-radius: 10px;
     background-color: aqua;
@@ -521,7 +534,8 @@
     height: 15vh;
     text-align: start;
 }
-.textObs{
+
+.textObs {
     width: 100%;
     margin: 5px 0;
     padding: 10px 20px;
@@ -531,7 +545,7 @@
     background-color: var(--bg-color-1);
 }
 
-.textObs::placeholder{
+.textObs::placeholder {
     color: var(--text-placeholder-color-1);
 }
 
@@ -711,6 +725,19 @@
     border: 1px solid var(--border-color-1);
     border-radius: 1.5vh;
     padding: 2vh;
+    cursor: pointer;
+    transition: .5s all ease;
+}
+
+.opProfile:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    transition: .5s all ease;
+}
+
+.opProfile:hover img{
+    filter: invert(1);
+    transition: .5s all ease;
 }
 
 .wrapper2vh {
@@ -808,31 +835,92 @@
     margin-bottom: 1vh !important;
 }
 
-.circle-line{
+.circle-line {
     height: 5vh;
     padding: 1vh 1vh 0 1vh;
 }
 
-.circle{
+.circle {
     background: var(--border-color-1);
     width: 11%;
     height: 85%;
     border-radius: 46vh;
 }
 
-.line{
+.line {
     width: 15%;
     height: 8%;
     background-color: var(--border-color-1);
 }
 
-.statusPagamento{
+.statusPagamento {
     background-color: #fed201;
     color: var(--text-color-1);
     padding: 0 1.5vw;
     border-radius: 6vh;
 }
 
-.wrapper100{
+.wrapper100 {
     margin: 100px;
+}
+
+#button-coupon {
+    width: 29vw;
+    height: 5vh;
+}
+
+#couponModal {
+    position: fixed;
+    box-shadow: 0px 3px 8px 0px rgb(0 0 0 / 16%);
+    bottom: 0;
+    overflow: scroll;
+    gap: 3vh;
+    height: 50vh;
+    background-color: var(--bg-color-2);
+    z-index: 2;
+}
+
+.backgroundTransparent {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.couponList {
+    gap: 3vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.couponContainer {
+    padding: 2vh 3vh;
+    display: grid;
+}
+
+.discountCoupon {
+    background-color: var(--color-primary);
+    border-radius: 5px;
+    padding: 1vw;
+}
+
+.orderHistoryItem {
+    border-bottom: 1px solid var(--color-grey);
+    margin: 2vh 4vh 0 4vh;
+    padding-bottom: 2vh;
+}
+
+.orderHistoyList {
+    overflow: scroll;
+}
+
+.deleteAccount{
+    display: flex;
+    align-items: center;
+    align-items: center;
+    color: red;
 }

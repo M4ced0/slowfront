@@ -1,36 +1,15 @@
 <template>
     <div class="base">
         <main class="login-register">
-            <!-- <div class="home_banner">
-                <div class="text_banner">
-                    <div class="text_banner_up">
-                        <span>Tabacaria</span>
-                        <span>Na porta</span>
-                        <span>da sua</span>
-                        <span>casa!</span>
-                    </div>
-                    <div class="text_banner_small">
-                        <span>é so entrar</span>
-                        <span>e aproveitar!</span>
-                    </div>
-                    <div class="logo">
-                        <img src="./assets/images/logo.png" alt="Logo">
-                    </div>
-                </div>
-                <div class="banner">
-                    <img src="./assets/images/img_home.png" alt="Banner Home">
-                </div>
-            </div> -->
-
             <div id="login" class="home_box">
                 <div class="home_box_form border-radius-top"> 
-                    <div v-show="isLogin" class="box_login">
+                    <div v-if="isLogin" class="box_login">
                         <div class="home_box_login">
                             <div class="home_box_title">
                                 <label class="text-18-600 text-color-1">Entre ou Cadastre-se</label>
                             </div>
                             <div class="group-input">
-                                <input type="number" class="item-input" v-model="phone"  placeholder="DDD + Seu número">
+                                <input type="text" class="item-input" v-model="phone"  placeholder="(00) 00000-0000" v-mask="'(00) 0 0000-0000'">
                                 <button class="btn btn-black btn-small" @click="enter">
                                     <i class="material-icons">chevron_right</i>
                                 </button>
@@ -42,7 +21,7 @@
                             </label>
                         </div>
                     </div>
-                    <div v-show="isRegister" class="box_register">
+                    <div v-if="isRegister" class="box_register">
                         <div class="home_box_top">
                             <div class="home_box_title">
                                 <label class="text-18-600 text-color-1">Crie sua conta</label>
@@ -58,7 +37,7 @@
                                 <input type="email" class="item-input" placeholder="E-mail" v-model="email">
                             </div>
                             <div class="group-input">
-                                <input type="number" class="item-input" placeholder="DDD + Seu número" v-model="phone" readonly>
+                                <input type="number" class="item-input" placeholder="DDD + Seu número" v-model="phone" readonly v-mask="'(00) 0 0000-0000'">
                             </div>
 
                             <div class="group-input">
@@ -80,7 +59,7 @@
                             </div>
                         </div>
                     </div>
-                    <div v-show="isConfirm" class="box_confirm">
+                    <div v-if="isConfirm" class="box_confirm">
                         <div class="home_box_top">
                             <div class="home_box_title">
                                 <label class="text-18-600 text-color-1">Confirmação de número</label>
@@ -127,7 +106,7 @@
                 isRegister:false,
                 isConfirm: false,
                 isLogin: true,
-                phone: '83996317280',
+                phone: '',
                 full_name: '',
                 birth: '',
                 email: '',
@@ -152,7 +131,7 @@
                     full_name: this.full_name,
                     email: this.email,
                     birth: this.birth,
-                    phone: this.phone,
+                    phone: this.phone.replace(/\D/gm, '')
                 }
 
                 this.$http.post("/register", json, {
@@ -178,7 +157,7 @@
             },
             confirm(){
                 var json = {
-                    phone: this.phone,
+                    phone: this.phone.replace(/\D/gm, ''),
                     code: this.code,
                 }
 
@@ -208,7 +187,7 @@
             },
             enter() {
                 var json = {
-                    phone: this.phone,
+                    phone:this.phone.replace(/\D/gm, ''),
                 }
 
                 this.$http.post("/code", json, {
@@ -237,30 +216,6 @@
                 });
 
             },
-            // load() {
-            //     var json = {
-            //         sponser: this.$route.params.sponser
-            //     }
-
-            //     this.$http.post("/sponsers", json, {
-            //         headers: {
-            //         'Accept': 'application/json',
-            //         },
-            //     })
-            //     .then((response) => {
-            //         this.membership_name = "Sponser is " + response.data.sponser;
-            //     })
-            //     .catch((error) => {
-            //     this.$router.push('/');
-            //         if (error.response && error.response.data) {
-            //             this.showAlert("error", error.response.data);
-            //         } else {
-            //             console.log("error", error);
-            //             this.showAlert("error", "Erro desconhecido."
-            //             );
-            //         }
-            //     });
-            // },
             backConfirm(){
                 this.isLogin = !this.isLogin
                 this.isConfirm = !this.isConfirm
@@ -268,6 +223,6 @@
             onUpdate(payload) {
                 this.country = payload.countryCallingCode
             },
-        }
+        },
     }
 </script>

@@ -317,12 +317,14 @@ button {
     bottom: 1px;
     content: "";
 }
+
 .switch--shadow + label:before {
     right: 1px;
     background-color: #f1f1f1;
     border-radius: 60px;
     transition: background 0.4s;
 }
+
 .switch--shadow + label:after {
     width: 25px;
     height: 25px;
@@ -331,9 +333,11 @@ button {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     transition: all 0.4s;
 }
+
 .switch--shadow:checked + label:before {
 background-color: #8ce196;
 }
+
 .switch--shadow:checked + label:after {
     transform: translateX(23px);
 }
@@ -346,12 +350,14 @@ background-color: #8ce196;
     border-radius: 60px;
     transition: background 0.4s;
 }
+
 .switch--flat + label:before,
 .switch--flat + label:after {
     display: block;
     position: absolute;
     content: "";
 }
+
 .switch--flat + label:before {
     top: 2px;
     left: 2px;
@@ -385,7 +391,6 @@ background-color: #8ce196;
     border-radius: 10px;
     background-color: var(--color-white);
 }
-
 
 .item-product{
     width: calc(50% - 10px);

@@ -26,74 +26,17 @@
                 <div class="slide-categories">
                     <swiper :slidesPerView="4" :grid="{
                         rows: 2,
-                    }" :spaceBetween="10" :pagination="{
-                        clickable: true,
-                    }" :modules="modules" class="mySwiper">
-                        <swiper-slide>
+                        fill: 'row'
+                    }" :spaceBetween="5"
+                    :modules="modules" class="mySwiper">
+                        <swiper-slide v-for="item in categories" :key="item.id">
                             <div class="category" @click="category">
                                 <div class="item-category">
-                                    <img src="@/assets/images/categories/pods.png" alt="">
+                                    <img :src="storage+'/'+item.img" alt="">
                                 </div>
-                                <span class="name-category text-color-black text-16">Pods</span>
+                                <span class="name-category text-color-black text-16">{{item.name}}</span>
                             </div>
                         </swiper-slide>
-                        <swiper-slide>
-                            <div class="category" @click="category">
-                                <div class="item-category">
-                                    <img src="@/assets/images/categories/cigarros.png" alt="">
-                                </div>
-                                <span class="name-category text-color-black text-16">Cigarros</span>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide>
-                            <div class="category" @click="category">
-                                <div class="item-category">
-                                    <img src="@/assets/images/categories/palheiros.png" alt="">
-                                </div>
-                                <span class="name-category text-color-black text-16">Palheiros</span>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide>
-                            <div class="category" @click="category">
-                                <div class="item-category">
-                                    <img src="@/assets/images/categories/tabacos.png" alt="">
-                                </div>
-                                <span class="name-category text-color-black text-16">Tabacos</span>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide>
-                            <div class="category" @click="category">
-                                <div class="item-category">
-                                    <img src="@/assets/images/categories/sedas.png" alt="">
-                                </div>
-                                <span class="name-category text-color-black text-16">Sedas</span>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide>
-                            <div class="category" @click="category">
-                                <div class="item-category">
-                                    <img src="@/assets/images/categories/piteiras.png" alt="">
-                                </div>
-                                <span class="name-category text-color-black text-16">Piteiras</span>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide>
-                            <div class="category" @click="category">
-                                <div class="item-category">
-                                    <img src="@/assets/images/categories/fumos.png" alt="">
-                                </div>
-                                <span class="name-category text-color-black text-16">Fumos</span>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide>
-                            <div class="category" @click="category">
-                                <div class="item-category">
-                                    <img src="@/assets/images/categories/glicose.png" alt="">
-                                </div>
-                                <span class="name-category text-color-black text-16">Glicose</span>
-                            </div>
-                        </swiper-slide>
-                        <swiper-slide></swiper-slide>
                     </swiper>
                 </div>
             </section>
@@ -102,49 +45,32 @@
                     Destaques
                 </div>
                 <div class="slide-highlights">
-                    <div class="item-highlights">
-                        <img src="@/assets/images/destaques/destaque_1.png" alt="">
-                    </div>
-                    <div class="item-highlights">
-                        <img src="@/assets/images/destaques/destaque_2.png" alt="">
-                    </div>
+                    <swiper :slidesPerView="'auto'"
+                    :centeredSlides="true" :spaceBetween="5" class="mySwiper">
+                        <swiper-slide  v-for="item in highlights" :key="item.id">
+                            <div class="item-highlights">
+                                <img :src="storage+'/'+item.image" alt="">
+                            </div>
+                        </swiper-slide>
+                    </swiper>
                 </div>
             </section>
             <section class="offers">
                 <div class="title-offers p-title text-18-600">Ofetas</div>
                 <div class="slide-offers">
-                    <div class="item-product box-item">
+                    <div class="item-product box-item" v-for="item in sales" :key="item.id">
                         <div class="img-offer">
-                            <img src="@/assets/images/itens/socb2.png" alt="">
+                            <img :src="storage+'/'+item.img" alt="">
                         </div>
                         <div class="infos">
                             <div class="price text-color-primary text-16-600">R$ 6,00</div>
-                            <div class="promo">
+                            <!-- <div class="promo">
                                 <span class="tag tag-primary text-12">Até -15%</span>
                                 <span class="text-12 text-color-3">R$ 8,60</span>
-                            </div>
+                            </div> -->
                             <div class="item-name text-color-3 p-title">
                                 <span class="name text-13-600 ">OCB Slim Premium</span>
                                 <span class="text-10">1 Unid c/ 32 folhas</span>
-                            </div>
-                            <div class="add w-100">
-                                <button class="btn btn-all btn-primary">Adicionar</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-product box-item">
-                        <div class="img-offer">
-                            <img src="@/assets/images/itens/elf_bar_te.png" alt="">
-                        </div>
-                        <div class="infos">
-                            <div class="price text-color-primary text-16-600">R$ 95,00</div>
-                            <div class="promo">
-                                <span class="tag tag-primary text-12">Até -15%</span>
-                                <span class="text-12 text-color-3">R$ 120,00</span>
-                            </div>
-                            <div class="item-name text-color-3 p-title">
-                                <span class="name text-13-600 ">Elf Bar TE | Strawberry</span>
-                                <span class="text-10">500 Puffs</span>
                             </div>
                             <div class="add w-100">
                                 <button class="btn btn-all btn-primary">Adicionar</button>
@@ -158,101 +84,33 @@
                     Marcas que amamos
                 </div>
                 <div class="slide-categories">
-                    <div class="category">
-                        <div class="item-category favorite">
-                            <img src="@/assets/images/marcas/marca1.png" alt="">
-                        </div>
-                    </div>
-                    <div class="category">
-                        <div class="item-category favorite">
-                            <img src="@/assets/images/marcas/marca2.png" alt="">
-                        </div>
-                    </div>
-                    <div class="category">
-                        <div class="item-category favorite">
-                            <img src="@/assets/images/marcas/marca3.png" alt="">
-                        </div>
-                    </div>
-                    <div class="category">
-                        <div class="item-category favorite">
-                            <img src="@/assets/images/marcas/marca4.png" alt="">
-                        </div>
-                    </div>
+                    <swiper :slidesPerView="4" :spaceBetween="5" class="mySwiper">
+                        <swiper-slide v-for="item in brands" :key="item.id">
+                            <div class="category">
+                                <div class="item-category favorite">
+                                    <img :src="storage+'/'+item.img" alt="">
+                                </div>
+                            </div>
+                        </swiper-slide>
+                    </swiper>
                 </div>
             </section>
             <section class="produts">
                 <div class="title-produts p-title text-18-600">Produtos</div>
                 <div class="slide-produts">
-                    <div class="item-product box-item">
+                    <div class="item-product box-item" v-for="item in products" :key="item.id">
                         <div class="img-offer">
-                            <img src="@/assets/images/itens/tabc2.png" alt="">
+                            <img :src="storage+'/'+item.img" alt="">
                         </div>
                         <div class="infos">
-                            <div class="price text-color-primary text-16-600">R$ 6,00</div>
+                            <div class="price text-color-primary text-16-600">{{amountConverted(item.amount)}}</div>
                             <div class="promo">
-                                <span class="tag tag-primary text-12">Até 15%</span>
-                                <span class="text-12 text-color-3">R$ 8,30</span>
+                                <!-- <span class="tag tag-primary text-12">Até 15%</span>
+                                <span class="text-12 text-color-3">R$ 8,30</span> -->
                             </div>
                             <div class="item-name text-color-3 p-title">
-                                <span class="name text-13-600 ">Elf Bar TE | Strawberry</span>
-                                <span class="text-10">1 Unid c/ 32 folhas</span>
-                            </div>
-                            <div class="add w-100">
-                                <button class="btn btn-all btn-primary">Adicionar</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-product box-item">
-                        <div class="img-offer">
-                            <img src="@/assets/images/itens/cgrmkx.png" alt="">
-                        </div>
-                        <div class="infos">
-                            <div class="price text-color-primary text-16-600">R$ 6,00</div>
-                            <div class="promo">
-                                <span class="tag tag-primary text-12">Até 15%</span>
-                                <span class="text-12 text-color-3">R$ 8,30</span>
-                            </div>
-                            <div class="item-name text-color-3 p-title">
-                                <span class="name text-13-600 ">Elf Bar TE | Strawberry</span>
-                                <span class="text-10">1 Unid c/ 32 folhas</span>
-                            </div>
-                            <div class="add w-100">
-                                <button class="btn btn-all btn-primary">Adicionar</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-product box-item">
-                        <div class="img-offer">
-                            <img src="@/assets/images/itens/tabc3.png" alt="">
-                        </div>
-                        <div class="infos">
-                            <div class="price text-color-primary text-16-600">R$ 6,00</div>
-                            <div class="promo">
-                                <span class="tag tag-primary text-12">Até 15%</span>
-                                <span class="text-12 text-color-3">R$ 8,30</span>
-                            </div>
-                            <div class="item-name text-color-3 p-title">
-                                <span class="name text-13-600 ">Elf Bar TE | Strawberry</span>
-                                <span class="text-10">1 Unid c/ 32 folhas</span>
-                            </div>
-                            <div class="add w-100">
-                                <button class="btn btn-all btn-primary">Adicionar</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-product box-item">
-                        <div class="img-offer">
-                            <img src="@/assets/images/itens/dpaia1.png" alt="">
-                        </div>
-                        <div class="infos">
-                            <div class="price text-color-primary text-16-600">R$ 6,00</div>
-                            <div class="promo">
-                                <span class="tag tag-primary text-12">Até 15%</span>
-                                <span class="text-12 text-color-3">R$ 8,30</span>
-                            </div>
-                            <div class="item-name text-color-3 p-title">
-                                <span class="name text-13-600 ">Elf Bar TE | Strawberry</span>
-                                <span class="text-10">1 Unid c/ 32 folhas</span>
+                                <span class="name text-13-600 ">{{item.name}}</span>
+                                <span class="text-10">{{item.description}}</span>
                             </div>
                             <div class="add w-100">
                                 <button class="btn btn-all btn-primary">Adicionar</button>
@@ -267,7 +125,10 @@
 </template>
 
 <script>
+
 import NavBar from '@/components/NavBar.vue'
+import Cookie from 'js-cookie'
+import AppMixin from '@/App.vue';
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
@@ -276,7 +137,7 @@ import 'swiper/css';
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
 
-import { Grid, Pagination } from 'swiper/modules';
+import { Grid } from 'swiper/modules';
 
 export default {
     name: 'HomeView',
@@ -285,11 +146,17 @@ export default {
             currentDate: this.getCurrentDate(),
             searchQuery: '',
             products: [],
+            brands: [],
+            highlights: [],
+            sales: [],
             categories: [],
             filteredProducts: [],
-            filteredCategories: []
+            filteredCategories: [],
+            modules: [Grid],
+            token: Cookie.get('slow_token'),
         }
     },
+    mixins: [AppMixin],
     components: {
         NavBar,
         Swiper,
@@ -323,17 +190,40 @@ export default {
             const hours = date.getHours().toString().padStart(2, '0');
             const minutes = date.getMinutes().toString().padStart(2, '0');
             return `${day}/${month}/${year} | ${hours}:${minutes}`;
-        }
-    },
-    setup() {
-        return {
-            modules: [Grid, Pagination],
-        };
+        },
+        load(){
+            this.isSearch = false;
+
+            this.$http.get("user/home", {
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json",
+                    Authorization: 'Bearer ' + this.token
+                },
+            })
+            .then((response) => {
+                this.categories = response.data.itens.categories;
+                this.highlights = response.data.itens.highlights;
+                this.sales = response.data.itens.sales;
+                this.brands = response.data.itens.brands;
+                this.products = response.data.itens.products;
+            })
+            .catch((error) => {
+                if (error.response && error.response.data) {
+                    this.showAlert('error', error.response.data.message);
+                } else {
+                    this.showAlert('error', 'Erro desconhecido.');
+                }
+            });
+        },
     },
     mounted() {
         setInterval(() => {
             this.currentDate = this.getCurrentDate();
         }, 60000);
+    },
+    created(){
+        this.load();
     }
 }
 </script>

@@ -1,5 +1,4 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import authMiddleware from '@/services/middleware';
 
 import HomeView from '../views/HomeView.vue'
@@ -10,7 +9,9 @@ import ShoppingBagView from '@/views/ShoppingBagView.vue'
 import OrderView from '@/views/OrderView.vue'
 import ProfileView from '@/views/ProfileView.vue'
 import SalesView from '@/views/SalesView.vue'
-Vue.use(VueRouter)
+// import SlideView from '@/views/SlideView.vue'
+import CouponsView from '@/views/CouponsView.vue';
+import MyAccountView from '@/views/MyAccountView.vue';
 
 const routes = [
   {
@@ -41,33 +42,44 @@ const routes = [
     path: '/shopping-bag',
     name: 'shoppingBag',
     component: ShoppingBagView,
-    /* beforeEnter: authMiddleware.auth, */
+    beforeEnter: authMiddleware.auth, 
   },
   {
     path: '/order',
     name: 'order',
     component: OrderView,
-    /* beforeEnter: authMiddleware.auth, */
+    beforeEnter: authMiddleware.auth,
     
   },
   {
     path: '/profile',
     name: 'profile',
     component: ProfileView,
-    /* beforeEnter: authMiddleware.auth, */
+    beforeEnter: authMiddleware.auth,
   },
   {
     path: '/sales',
     name: 'sales',
     component: SalesView,
-    
+    beforeEnter: authMiddleware.auth,
+  },
+  {
+    path: '/coupons',
+    name: 'coupons',
+    component: CouponsView,
+    beforeEnter: authMiddleware.auth,
+  },
+  {
+    path: '/my-account',
+    name: 'my-account',
+    component: MyAccountView,
+    beforeEnter: authMiddleware.auth,
   }
 
 ]
 
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
+const router = createRouter({
+  history: createWebHashHistory(),
   routes
 })
 
