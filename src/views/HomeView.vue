@@ -27,14 +27,13 @@
                     <swiper :slidesPerView="4" :grid="{
                         rows: 2,
                         fill: 'row'
-                    }" :spaceBetween="5"
-                    :modules="modules" class="mySwiper">
+                    }" :spaceBetween="5" :modules="modules" class="mySwiper">
                         <swiper-slide v-for="item in categories" :key="item.id">
                             <div class="category" @click="category">
                                 <div class="item-category">
-                                    <img :src="storage+'/'+item.img" alt="">
+                                    <img :src="storage + '/' + item.img" alt="">
                                 </div>
-                                <span class="name-category text-color-black text-16">{{item.name}}</span>
+                                <span class="name-category text-color-black text-16">{{ item.name }}</span>
                             </div>
                         </swiper-slide>
                     </swiper>
@@ -45,11 +44,10 @@
                     Destaques
                 </div>
                 <div class="slide-highlights">
-                    <swiper :slidesPerView="'auto'"
-                    :centeredSlides="true" :spaceBetween="5" class="mySwiper">
-                        <swiper-slide  v-for="item in highlights" :key="item.id">
+                    <swiper :slidesPerView="'auto'" :centeredSlides="true" :spaceBetween="5" class="mySwiper">
+                        <swiper-slide v-for="item in highlights" :key="item.id">
                             <div class="item-highlights">
-                                <img :src="storage+'/'+item.image" alt="">
+                                <img :src="storage + '/' + item.image" alt="">
                             </div>
                         </swiper-slide>
                     </swiper>
@@ -58,16 +56,39 @@
             <section class="offers">
                 <div class="title-offers p-title text-18-600">Ofetas</div>
                 <div class="slide-offers">
-                    <div class="item-product box-item" v-for="item in sales" :key="item.id">
+                    <div class="slide-offers" v-for="item in sales" :key="item.id">
+                        <div class="item-product box-item" v-for="(product, index) in item.products" :key="index">
+                            <div class="img-offer">
+                                <img :src="storage + '/' + product.img" alt="Product Image">
+                            </div>
+                            <div class="infos">
+                                <div class="price text-color-primary text-16-600">
+                                    {{ amountConverted(product.price - item.discount) }}
+                                </div>
+                                <div class="promo">
+                                    <span class="tag tag-primary text-12">{{ item.type_promotion }}</span>
+                                    <span class="text-12 text-color-3">{{ amountConverted(product.price) }}</span>
+                                </div>
+                                <div class="item-name text-color-3 p-title">
+                                    <span class="name text-13-600">{{ product.name }}</span>
+                                    <span class="text-10">{{ product.description }}</span>
+                                </div>
+                                <div class="add w-100">
+                                    <button class="btn btn-all btn-primary">Adicionar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="item-product box-item" v-for="item in sales" :key="item.id">
                         <div class="img-offer">
-                            <img :src="storage+'/'+item.img" alt="">
+                            <img :src="storage + '/' + item.img" alt="">
                         </div>
                         <div class="infos">
                             <div class="price text-color-primary text-16-600">R$ 6,00</div>
-                            <!-- <div class="promo">
+                            <div class="promo">
                                 <span class="tag tag-primary text-12">Até -15%</span>
                                 <span class="text-12 text-color-3">R$ 8,60</span>
-                            </div> -->
+                            </div>
                             <div class="item-name text-color-3 p-title">
                                 <span class="name text-13-600 ">OCB Slim Premium</span>
                                 <span class="text-10">1 Unid c/ 32 folhas</span>
@@ -76,7 +97,7 @@
                                 <button class="btn btn-all btn-primary">Adicionar</button>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </section>
             <section class="categories">
@@ -88,7 +109,7 @@
                         <swiper-slide v-for="item in brands" :key="item.id">
                             <div class="category">
                                 <div class="item-category favorite">
-                                    <img :src="storage+'/'+item.img" alt="">
+                                    <img :src="storage + '/' + item.img" alt="">
                                 </div>
                             </div>
                         </swiper-slide>
@@ -100,20 +121,20 @@
                 <div class="slide-produts">
                     <div class="item-product box-item" v-for="item in products" :key="item.id">
                         <div class="img-offer">
-                            <img :src="storage+'/'+item.img" alt="">
+                            <img :src="storage + '/' + item.img" alt="">
                         </div>
                         <div class="infos">
-                            <div class="price text-color-primary text-16-600">{{amountConverted(item.amount)}}</div>
+                            <div class="price text-color-primary text-16-600">{{ amountConverted(item.price) }}</div>
                             <div class="promo">
                                 <!-- <span class="tag tag-primary text-12">Até 15%</span>
                                 <span class="text-12 text-color-3">R$ 8,30</span> -->
                             </div>
                             <div class="item-name text-color-3 p-title">
-                                <span class="name text-13-600 ">{{item.name}}</span>
-                                <span class="text-10">{{item.description}}</span>
+                                <span class="name text-13-600 ">{{ item.name }}</span>
+                                <span class="text-10">{{ item.description }}</span>
                             </div>
                             <div class="add w-100">
-                                <button class="btn btn-all btn-primary">Adicionar</button>
+                                <button @click="addToCart(item)" class="btn btn-all btn-primary">Adicionar</button>
                             </div>
                         </div>
                     </div>
@@ -154,6 +175,7 @@ export default {
             filteredCategories: [],
             modules: [Grid],
             token: Cookie.get('slow_token'),
+            currentCart: []
         }
     },
     mixins: [AppMixin],
@@ -176,6 +198,24 @@ export default {
                 console.error(error);
             }
         },
+        addToCart(item) {
+            let storedCart = localStorage.getItem('cartItem');
+            this.currentCart = storedCart ? JSON.parse(storedCart) : [];
+            if (Array.isArray(this.currentCart)) {
+                const existingItemIndex = this.currentCart.findIndex(cartItem => cartItem.id === item.id);
+                if (existingItemIndex !== -1) {
+                    this.currentCart[existingItemIndex].quantity += item.quantity || 1;
+                } else {
+                    item.quantity = item.quantity || 1;
+                    this.currentCart.push(item);
+                }
+            } else {
+                item.quantity = item.quantity || 1;
+                this.currentCart = [item];
+            }
+            localStorage.setItem('cartItem', JSON.stringify(this.currentCart));
+            this.$router.push('/shopping-bag');
+        },
         addresses() {
             this.$router.push('/addresses')
         },
@@ -191,7 +231,7 @@ export default {
             const minutes = date.getMinutes().toString().padStart(2, '0');
             return `${day}/${month}/${year} | ${hours}:${minutes}`;
         },
-        load(){
+        load() {
             this.isSearch = false;
 
             this.$http.get("user/home", {
@@ -201,20 +241,20 @@ export default {
                     Authorization: 'Bearer ' + this.token
                 },
             })
-            .then((response) => {
-                this.categories = response.data.itens.categories;
-                this.highlights = response.data.itens.highlights;
-                this.sales = response.data.itens.sales;
-                this.brands = response.data.itens.brands;
-                this.products = response.data.itens.products;
-            })
-            .catch((error) => {
-                if (error.response && error.response.data) {
-                    this.showAlert('error', error.response.data.message);
-                } else {
-                    this.showAlert('error', 'Erro desconhecido.');
-                }
-            });
+                .then((response) => {
+                    this.categories = response.data.itens.categories;
+                    this.highlights = response.data.itens.highlights;
+                    this.sales = response.data.itens.sales;
+                    this.brands = response.data.itens.brands;
+                    this.products = response.data.itens.products;
+                })
+                .catch((error) => {
+                    if (error.response && error.response.data) {
+                        this.showAlert('error', error.response.data.message);
+                    } else {
+                        this.showAlert('error', 'Erro desconhecido.');
+                    }
+                });
         },
     },
     mounted() {
@@ -222,7 +262,7 @@ export default {
             this.currentDate = this.getCurrentDate();
         }, 60000);
     },
-    created(){
+    created() {
         this.load();
     }
 }

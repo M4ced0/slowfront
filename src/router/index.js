@@ -18,25 +18,25 @@ const routes = [
     path: '/',
     name: 'login',
     component: LoginView,
-    beforeEnter: authMiddleware.login,
+    beforeEnter: authMiddleware.login, 
   },
   {
     path: '/home',
     name: 'home',
     component: HomeView,
-    beforeEnter: authMiddleware.auth,
+    beforeEnter: authMiddleware.auth, 
   },
   {
     path: '/addresses',
     name: 'addresses',
     component: AddressesView,
-    beforeEnter: authMiddleware.auth,
+    beforeEnter: authMiddleware.auth, 
   },
   {
     path: '/category',
     name: 'category',
     component: CategoryView,
-    beforeEnter: authMiddleware.auth,
+    beforeEnter: authMiddleware.auth, 
   },
   {
     path: '/shopping-bag',
@@ -48,14 +48,14 @@ const routes = [
     path: '/order',
     name: 'order',
     component: OrderView,
-    beforeEnter: authMiddleware.auth,
+    beforeEnter: authMiddleware.auth, 
     
   },
   {
     path: '/profile',
     name: 'profile',
     component: ProfileView,
-    beforeEnter: authMiddleware.auth,
+    beforeEnter: authMiddleware.auth, 
   },
   {
     path: '/sales',

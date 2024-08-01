@@ -9,7 +9,7 @@
                 CUPONS PARA ATIVAR
             </div>
             <div class="couponList">
-                <div class="couponContainer box-item gap-1 cursor-pointer">
+                <div  class="couponContainer box-item gap-1 cursor-pointer">
                     <div class="w-100 d-flex flex-row justify-content-start align-items-center gap-1">
                         <div class="discountCoupon w-20 d-flex justify-content-center text-14-600">10%</div>
                         <div class="nameCoupon text-16-600">GLICOSE 10</div>
@@ -18,7 +18,7 @@
                         Desconto: 10%, Acima de R$40,00. Válido apenas para compras de Glicose. Até 05/06/2024.
                     </div>
                 </div>
-                <div class="couponContainer box-item gap-1 cursor-pointer">
+                <div  class="couponContainer box-item gap-1 cursor-pointer">
                     <div class="w-100 d-flex flex-row justify-content-start align-items-center gap-1">
                         <div class="discountCoupon w-20 d-flex justify-content-center text-14-600">FRETE</div>
                         <div class="nameCoupon text-16-600">TAXAZERO</div>
@@ -27,7 +27,7 @@
                         Desconto: 10%, Acima de R$40,00. Válido apenas para compras de Pods. Até 05/06/2024.
                     </div>
                 </div>
-                <div class="couponContainer box-item gap-1 cursor-pointer">
+                <div  class="couponContainer box-item gap-1 cursor-pointer">
                     <div class="w-100 d-flex flex-row justify-content-start align-items-center gap-1">
                         <div class="discountCoupon w-20 d-flex justify-content-center text-14-600">15%</div>
                         <div class="nameCoupon text-16-600">PALHEIRO</div>
@@ -36,7 +36,7 @@
                         Desconto: 10%, Acima de R$40,00. Válido apenas para compras de Pods. Até 05/06/2024.
                     </div>
                 </div>
-                <div class="couponContainer box-item gap-1 cursor-pointer">
+                <div  class="couponContainer box-item gap-1 cursor-pointer">
                     <div class="w-100 d-flex flex-row justify-content-start align-items-center gap-1">
                         <div class="discountCoupon w-20 d-flex justify-content-center text-14-600">10%</div>
                         <div class="nameCoupon text-16-600">POD10</div>
@@ -47,7 +47,7 @@
                 </div>
             </div>
             <!-- <div class="couponList">
-                <div class="couponContainer box-item gap-1 cursor-pointer">
+                <div  class="couponContainer box-item gap-1 cursor-pointer">
                 <div class="iconAvailabeCoupons"></div>
                 <div class="availableCouponsDescription">
                     <div class="availableCouponTitle"></div>
@@ -55,7 +55,7 @@
                 </div>
                 <div class="arrowRight"></div>
                 </div>
-                <div class="couponContainer box-item gap-1 cursor-pointer">
+                <div  class="couponContainer box-item gap-1 cursor-pointer">
                 <div class="iconAvailabeCoupons"></div>
                 <div class="availableCouponsDescription">
                     <div class="availableCouponTitle"></div>
@@ -63,7 +63,7 @@
                 </div>
                 <div class="arrowRight"></div>
                 </div>
-                <div class="couponContainer box-item gap-1 cursor-pointer">
+                <div  class="couponContainer box-item gap-1 cursor-pointer">
                 <div class="iconAvailabeCoupons"></div>
                 <div class="availableCouponsDescription">
                     <div class="availableCouponTitle"></div>
@@ -79,7 +79,7 @@
                 CUPONS DISPONÍVEIS
             </div>
             <div class="couponList">
-                <div class="couponContainer box-item gap-1 cursor-pointer">
+                <div  class="couponContainer box-item gap-1 cursor-pointer">
                     <div class="w-100 d-flex flex-row justify-content-start align-items-center gap-1">
                         <div class="discountCoupon w-20 d-flex justify-content-center text-14-600">10%</div>
                         <div class="nameCoupon text-16-600">POD 10</div>
@@ -88,7 +88,7 @@
                         Desconto: 10%, Acima de R$40,00. Válido apenas para compras de Pods. Até 05/06/2024.
                     </div>
                 </div>
-                <div class="couponContainer box-item gap-1 cursor-pointer">
+                <div  class="couponContainer box-item gap-1 cursor-pointer">
                     <div class="w-100 d-flex flex-row justify-content-start align-items-center gap-1">
                         <div class="discountCoupon w-20 d-flex justify-content-center text-14-600">FRETE</div>
                         <div class="nameCoupon text-16-600">TAXAZERO</div>
@@ -97,7 +97,7 @@
                         Desconto: 10%, Acima de R$40,00. Válido apenas para compras de Pods. Até 05/06/2024.
                     </div>
                 </div>
-                <div class="couponContainer box-item gap-1 cursor-pointer">
+                <div  class="couponContainer box-item gap-1 cursor-pointer">
                     <div class="w-100 d-flex flex-row justify-content-start align-items-center gap-1">
                         <div class="discountCoupon w-20 d-flex justify-content-center text-14-600">15%</div>
                         <div class="nameCoupon text-16-600">NOROLE</div>
@@ -106,7 +106,7 @@
                         Desconto: 10%, Acima de R$40,00. Válido apenas para compras de Pods. Até 05/06/2024.
                     </div>
                 </div>
-                <div class="couponContainer box-item gap-1 cursor-pointer">
+                <div  class="couponContainer box-item gap-1 cursor-pointer">
                     <div class="w-100 d-flex flex-row justify-content-start align-items-center gap-1">
                         <div class="discountCoupon w-20 d-flex justify-content-center text-14-600">10%</div>
                         <div class="nameCoupon text-16-600">POD10</div>
