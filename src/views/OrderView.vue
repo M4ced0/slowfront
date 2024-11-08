@@ -22,19 +22,35 @@
             </div>
             <div class="circle-line">
               <div class="circle completed">
-                <img src="https://i.imgur.com/oKE4HZ9.png" alt="Step 1" class="circle-img" />
+                <img
+                  src="https://i.imgur.com/oKE4HZ9.png"
+                  alt="Step 1"
+                  class="circle-img"
+                />
               </div>
               <div class="line completed"></div>
               <div class="circle">
-                <img src="https://i.imgur.com/cR4Pz67.png" alt="Step 2" class="circle-img" />
+                <img
+                  src="https://i.imgur.com/cR4Pz67.png"
+                  alt="Step 2"
+                  class="circle-img"
+                />
               </div>
               <div class="line"></div>
               <div class="circle">
-                <img src="https://i.imgur.com/gDD4oww.png" alt="Step 3" class="circle-img" />
+                <img
+                  src="https://i.imgur.com/gDD4oww.png"
+                  alt="Step 3"
+                  class="circle-img"
+                />
               </div>
               <div class="line"></div>
               <div class="circle">
-                <img src="https://i.imgur.com/4ec5vmo.png" alt="Step 4" class="circle-img" />
+                <img
+                  src="https://i.imgur.com/4ec5vmo.png"
+                  alt="Step 4"
+                  class="circle-img"
+                />
               </div>
             </div>
           </div>
@@ -186,6 +202,7 @@
 </template>
 
 <script>
+
 export default {
   name: "OrderView",
   components: {},
