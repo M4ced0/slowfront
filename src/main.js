@@ -17,7 +17,7 @@ const options = {
 };
 
 // Configurando URL base do Axios
-axios.defaults.baseURL = 'http://localhost:8000/api';
+axios.defaults.baseURL = 'https://slow.inexpay.com.br/api'; 
 
 // Criando a aplicação Vue
 const app = createApp(App);

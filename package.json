@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@devindex/vue-mask": "^2.0.3",
+    "app": "file:",
     "axios": "^1.7.2",
     "bootstrap": "^5.3.3",
     "bootstrap-vue": "^2.23.1",
